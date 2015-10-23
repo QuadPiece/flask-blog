@@ -2,9 +2,11 @@
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
-#Config
+# Server config
+app.debug = True
+
+#Config variables
 DATABASE = './blog.db'
-DEBUG = True
 SECRET_KEY = 'sample key'
 USERNAME = 'user'
 PASSWORD = 'bananacar'
@@ -21,4 +23,4 @@ def db_connect():
 def index():
   return 'Hello World!'
 
-app.run(debug=True)
+app.run()
