@@ -1,1 +1,18 @@
-/* Placeholder */
+html, body, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.page {
+  width: 1020px;
+  max-width: 100%;
+  display: block;
+  background-color: #eee;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
