@@ -3,6 +3,10 @@ Flask blog
 
 Personal blog written using the Flask microframework.
 
+**This is a personal project and I will not be actively maintaining it, nor accepting any form of requests. Nor merge requests, though that's impossible since this is a personal git install. The source was only made available to be nice, some people might like it.**
+
+With that being said. This software is pretty much [WTFPL](https://en.wikipedia.org/wiki/WTFPL) licenced if anything
+
 Usage
 -----
 
