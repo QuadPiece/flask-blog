@@ -12,11 +12,6 @@ PASSWORD = 'bananacar'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# Server config
-app.debug = True
-app.host = '127.0.0.1'
-app.port = 5000
-
 # Database functions
 def db_connect():
   return sqlite3.connect(app.config['DATABASE'])
@@ -25,4 +20,4 @@ def db_connect():
 def index():
   return 'Hello World!'
 
-app.run()
+app.run(debug=True,host="0.0.0.0",port=5800)
