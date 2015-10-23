@@ -37,6 +37,12 @@ Now this is the best part
 
 1. Do exactly the same as above, but instead of creating the database with the `schema.sql` file, just bring along your own `blog.db` file
 
+### Backup
+
+1. Copy the `blog.db` somewhere
+
+why can't everything be this easy
+
 Goals
 -----
 
