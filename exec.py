@@ -4,6 +4,8 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 
 # Server config
 app.debug = True
+app.host = '127.0.0.1'
+app.port = 5000
 
 #Config variables
 DATABASE = './blog.db'
