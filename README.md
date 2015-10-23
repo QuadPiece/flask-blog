@@ -15,8 +15,9 @@ Setup is faily easy for this application due to the nature of how it's built. Ho
 
 ### Development
 
-1. Do `python exec.py`
-2. Start working
+1. Generate the sqlite database by running `sqlite3 blog.db < schema.sql` in the directory where you cloned the repo
+2. Do `python exec.py`
+3. Start working
 
 ### Production
 
@@ -25,6 +26,12 @@ Setup is faily easy for this application due to the nature of how it's built. Ho
 3. Set up a proper webserver to handle your requests. I recommend nginx. Configure it as a reverse proxy for your desired subdomain or url, pointing to `127.0.0.1` and whatever port you defined in `exec.py`
 4. Do `python exec.py`
 5. (Optional) It's heavily recommended that you configure your webserver to handle static files for you. This can greatly improve performance and in some cases, security
+
+### Migration
+
+Now this is the best part
+
+1. Do exactly the same as above, but instead of creating the database with the `schema.sql` file, just bring along your own `blog.db` file
 
 Goals
 -----
