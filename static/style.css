@@ -17,28 +17,35 @@ body {
   min-height: 100vh;
   padding-bottom: 50px;
   box-sizing: border-box;
+  background-color: #2d2d2d;
+  color: #ffffff;
 }
 
 a, a:visited {
   text-decoration: none;
   color: inherit;
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: #B0B0F0;
 }
 
 /* Header */
 
 .header {
   width: 100%;
-  padding: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #2d2d2d;
-  color: #fff;
+  padding: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  background-color: #FFFFFF;
+  color: #666666;
   box-sizing: border-box;
 }
 
 .flashmessage {
   padding: 3px;
-  font-size: 12pt;
+  font-size: 10pt;
   display: inline-block;
   margin-left: 15px;
   box-shadow: 0px 0px 2px #ffffff;
@@ -51,8 +58,8 @@ a, a:visited {
 .header h1 {
   display: inline-block;
   font-family: "Lato";
-  font-size: 18pt;
-  font-weight: 300;
+  font-size: 12pt;
+  font-weight: 400;
 }
 
 /* Footer */
@@ -63,7 +70,7 @@ a, a:visited {
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
-  background-color: #2d2d2d;
+  background-color: #4d4d4d;
   color: #eeeeee;
   position: absolute;
   bottom: 0;
@@ -116,26 +123,26 @@ a, a:visited {
 }
 
 .entries a:visited li {
-  background-color: #152550;
+  background-color: #404080;
   font-size: 22pt;
   color: #aaaaaa;
 }
 
 .entries a:hover li {
-  background-color: #304070;
+  background-color: #8080E0;
   color: #fff;
 }
 
 /* Post page */
 
 .title {
-  background-color: #203060;
+  background-color: #6060A0;
   color: #ffffff;
   width: 100%;
   font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
-  font-size: 24pt;
+  font-size: 28pt;
   padding: 20px;
   box-sizing: border-box;
   margin-bottom: 40px;
@@ -144,13 +151,30 @@ a, a:visited {
 .post h1 {
   font-family: "Lato", sans-serif;
   font-weight: 300;
+  font-size: 32pt;
+  color: #8080F0;
   border-bottom: 1px dotted #aaaaaa;
   margin-bottom: 10px;
-  margin-top: 30px;
+  margin-top: 70px;
 }
 
 .post p {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-size: 13pt;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  font-size: 14pt;
+  line-height: 145%;
+}
+
+.post ul li, post ol li {
+  font-size: 14pt;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.post a {
+  color: #8080F0;
+}
+
+.post a:hover {
+  color: #B0B0F0
 }
