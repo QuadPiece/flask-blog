@@ -11,10 +11,20 @@ html {
   min-height: 100%;
 }
 
+/* Footer workaround */
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
 a, a:visited {
   text-decoration: none;
   color: inherit;
 }
+
+/* Header */
 
 .header {
   width: 100%;
@@ -43,6 +53,32 @@ a, a:visited {
   font-family: "Lato";
   font-size: 18pt;
   font-weight: 300;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  background-color: #2d2d2d;
+  color: #eeeeee;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 /* Front page */
