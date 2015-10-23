@@ -1,6 +1,7 @@
 # Import party
 import sqlite3
-from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
+import markdown
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, Markup
 
 #Config variables
 DATABASE = './blog.db'
@@ -26,12 +27,24 @@ def teardown_request(exception):
     if db is not None:
         db.close()
 
+def query_db(query, args=(), one=False):
+    cur = g.db.execute(query, args)
+    rv = cur.fetchall()
+    return (rv[0] if rv else None) if one else rv
+
 # Actual routes
 @app.route('/')
 def home():
-    cur = g.db.execute('select title, text from entries order by id desc')
-    entries = [dict(title=row[0], text=row[1]) for row in cur.fetchall()]
+    cur = g.db.execute('select title, id from entries order by id desc')
+    entries = [dict(title=row[0], id=row[1]) for row in cur.fetchall()]
     return render_template('home.html', entries=entries)
+
+@app.route('/post/<int:id>')
+def view_post(id):
+    response = query_db('select title, text from entries where id = ?', [id])
+    posts = [dict(title=row[0], text=row[1]) for row in response]
+    posts[0]["text"] = Markup(markdown.markdown(posts[0]["text"]))
+    return render_template('post.html', post=posts[0])
 
 @app.route('/add', methods=['POST'])
 def add_post():
@@ -41,6 +54,15 @@ def add_post():
                  [request.form['title'], request.form['text']])
     g.db.commit()
     flash('New entry was successfully posted')
+    return redirect(url_for('home'))
+
+@app.route('/del/<int:id>')
+def delete_post(id):
+    if not session.get('logged_in'):
+        abort(401)
+    g.db.execute('delete from entries where id = ?', [id])
+    g.db.commit()
+    flash('Deleted post ID:' + str(id))
     return redirect(url_for('home'))
 
 # Sessions
