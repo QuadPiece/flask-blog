@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
     <form action="{{ url_for('add_post') }}" method="post" class="add-entry">
-      <input type="text" name="title">
-      <textarea name="text" class="composer"></textarea>
+      <input type="text" name="title" placeholder="My cool post title">
+      <textarea name="text" class="composer" placeholder="My even cooler blog post"></textarea>
       <input type="submit" value="Post">
     </form>
 {% endblock %}
