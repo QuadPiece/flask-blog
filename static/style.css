@@ -142,8 +142,6 @@ a:hover {
 /* Post page */
 
 .title {
-  background-color: #6060A0;
-  color: #ffffff;
   width: 100%;
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -152,6 +150,7 @@ a:hover {
   padding: 20px;
   box-sizing: border-box;
   margin-bottom: 40px;
+  border-bottom: solid 2px #CCCCCC;
 }
 
 .post h1 {
