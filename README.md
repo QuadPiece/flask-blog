@@ -7,10 +7,21 @@ Personal blog written using the Flask microframework.
 
 With that being said. This software is pretty much [WTFPL](https://en.wikipedia.org/wiki/WTFPL) licenced if anything
 
+Requirements
+------------
+
+Python 2.7+, because that's just what Flask recommends.  
+`tmux` to keep the blog running.
+
+Everything else is listed in the `requirements.txt` file.  
+You might also want to make sure that you have `sqlite3` installed on your system so that you can generate the database.
+
+I will not be providing any support for Windows users.
+
 Usage
 -----
 
-Setup is faily easy for this application due to the nature of how it's built. However, I will inform you ahead of time that this is not designed for high-traffic load. Due to things like SQLite usage.
+Setup is fairly easy for this application due to the nature of how it's built. However, I will inform you ahead of time that this is not designed for high-traffic load. Due to things like SQLite usage.
 
 1. Clone the repository into a folder anywhere you wish
 2. (Optional) Created a virtual environment for the project
@@ -52,9 +63,7 @@ This project was started to learn some basic Flask and Python features that coul
 * Handling files
 * Templating
 * Some lazy single-user login just to test the session feature
-* Not sure if DB (prolly just SQLite) or static files
+* ~~Not sure if DB (prolly just SQLite) or static files~~ SQLite apparently
 * Getting used to route-based web development
-* Maybe some JSON stuff
-* Maybe some Self-written caching in Python
 
 **Warning, most of the Python code will probably end up being written in a single, messy file. Call me old school or stupid, but "ctrl+f"-ing for the route I want to work on is just how I tend to go about these things**
