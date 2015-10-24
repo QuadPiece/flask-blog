@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
+  <div class="bio">
+    <p>
+      Hey there. I'm quad. I do geeky stuff and watch some anime and whatevr. These days, people probably know me as the creator of <a href="http://openings.moe/">openings.moe</a>
+    </p>
+    <p>
+      This is a blog dedicated to dumping some random stuff. Though activity will probably not be that high. I recommend trying <a href="https://twitter.com/QuadPiece">Twitter</a> if you're looking for more.
+    </p>
+  </div>
   <ul class=entries>
   {% for entry in entries %}
     <a href="/post/{{ entry.id }}">
