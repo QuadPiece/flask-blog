@@ -32,7 +32,7 @@ def query_db(query, args=(), one=False):
     rv = cur.fetchall()
     return (rv[0] if rv else None) if one else rv
 
-# Actual routes
+# Actual routes for the basic site
 @app.route('/')
 def home():
     cur = g.db.execute('select title, id, text from entries order by id desc')
@@ -46,6 +46,7 @@ def view_post(id):
     posts[0]["text"] = Markup(markdown.markdown(posts[0]["text"]))
     return render_template('post.html', post=posts[0])
 
+# Editor routes
 @app.route('/add', methods=['POST'])
 def add_post():
     if not session.get('logged_in'):
@@ -55,6 +56,10 @@ def add_post():
     g.db.commit()
     flash('New entry was successfully posted')
     return redirect(url_for('home'))
+
+@app.route('/update', methods=['POST'])
+def update_post():
+    abort(404) #Temp
 
 @app.route('/write')
 def writenew():
@@ -71,6 +76,14 @@ def delete_post(id):
     g.db.commit()
     flash('Deleted post ID:' + str(id))
     return redirect(url_for('home'))
+
+@app.route('/post/<int:id>/edit')
+def edit_post(id):
+    if not session.get('logged_in'):
+        abort(401)
+    response = query_db('select title, text from entries where id = ?', [id])
+    posts = [dict(title=row[0], text=row[1]) for row in response]
+    render_template('edit.html', post=posts[0])
 
 # Sessions
 @app.route('/login', methods=['GET', 'POST'])

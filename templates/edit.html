@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('update_post') }}" method="post" class="add-entry">
+      <input type="text" name="title" placeholder="My cool post title">{{ post.title }}</input>
+      <textarea name="text" class="composer" placeholder="My even cooler blog post">{{ post.text }}</textarea>
+      <input type="submit" value="Post">
+    </form>
+{% endblock %}
