@@ -83,7 +83,7 @@ def edit_post(id):
         abort(401)
     response = query_db('select title, text from entries where id = ?', [id])
     posts = [dict(title=row[0], text=row[1]) for row in response]
-    render_template('edit.html', post=posts[0])
+    return render_template('edit.html', post=posts[0])
 
 # Sessions
 @app.route('/login', methods=['GET', 'POST'])
