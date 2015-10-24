@@ -178,3 +178,21 @@ a:hover {
 .post a:hover {
   color: #B0B0F0
 }
+
+/* Add post page */
+
+.add-entry {
+  width: 1020px;
+  padding: 5px;
+  max-width: 100%;
+}
+
+.add-entry textarea {
+  width: 100%;
+  padding: 50px;
+  font-size: 14pt;
+  box-sizing: border-box;
+  background-color: #eeeeee;
+  color: #2d2d2d;
+  box-shadow: 0px 0px 2px #111;
+}
