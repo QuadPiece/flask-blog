@@ -210,6 +210,7 @@ a:hover {
   height: 50vh;
   padding: 25px;
   font-size: 14pt;
+  resize: none;
   border: none;
   box-sizing: border-box;
   background-color: #ffffff;
