@@ -191,6 +191,8 @@ a:hover {
   width: 100%;
   padding: 40px;
   font-size: 14pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   background-color: #eeeeee;
   color: #2d2d2d;
@@ -216,8 +218,11 @@ a:hover {
 }
 
 .add-entry input[type="submit"] {
-  width: 30%;
+  width: 250px;
+  max-width: 100%;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   border: none;
   outline: none;
   padding: 5px;
