@@ -211,8 +211,8 @@ a:hover {
   font-size: 14pt;
   border: none;
   box-sizing: border-box;
-  background-color: #eeeeee;
-  color: #2d2d2d;
+  background-color: #2d2d2d;
+  color: #e2e2e2;
   box-shadow: none;
   outline: none;
   font-family: "Roboto", sans-serif;
@@ -227,8 +227,8 @@ a:hover {
   padding: 25px;
   margin: 0;
   box-sizing: border-box;
-  background-color: #eeeeee;
-  color: #2d2d2d;
+  background-color: #2d2d2d;
+  color: #e2e2e2;
   border: none;
   border-bottom: solid 2px #666666;
   box-shadow: none;
