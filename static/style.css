@@ -189,7 +189,7 @@ a:hover {
 
 .add-entry textarea {
   width: 100%;
-  height: 80vh;
+  height: 50vh;
   padding: 40px;
   font-size: 14pt;
     border: none;
@@ -227,7 +227,8 @@ a:hover {
   margin-right: auto;
   border: none;
   outline: none;
-  padding: 5px;
+  padding: 10px;
+  font-size: 16pt;
   box-sizing: border-box;
   color: #FFFFFF;
   background-color: #6060A0;
