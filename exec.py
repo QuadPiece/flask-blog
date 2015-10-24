@@ -56,6 +56,13 @@ def add_post():
     flash('New entry was successfully posted')
     return redirect(url_for('home'))
 
+@app.route('/write')
+def writenew():
+    if not session.get('logged_in'):
+        abort(401)
+    else:
+        return render_template('newpost.html')
+
 @app.route('/del/<int:id>')
 def delete_post(id):
     if not session.get('logged_in'):
