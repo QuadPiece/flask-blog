@@ -7,6 +7,8 @@ Personal blog written using the Flask microframework.
 
 With that being said. This software is pretty much [WTFPL](https://en.wikipedia.org/wiki/WTFPL) licenced if anything
 
+If you do something with this code, mention me on [Twitter](http://twitter.com/QuadPiece), I'd love to see :3
+
 Requirements
 ------------
 
