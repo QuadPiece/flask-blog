@@ -108,6 +108,11 @@ a:hover {
   box-shadow: 0px 0px 4px #111111;
 }
 
+.entries a {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .entries a li {
   list-style: none;
   width: 100%;
