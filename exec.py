@@ -57,12 +57,11 @@ def add_post():
     flash('New entry was successfully posted')
     return redirect(url_for('home'))
 
-@app.route('/update/<int:id>', methods=['POST'])
-def update_post(id):
+@app.route('/update/<int:postid>', methods=['POST'])
+def update_post(postid):
     if not session.get('logged_in'):
         abort(401)
-    g.db.execute('update entries (title, text) values (?, ?) where id = ?',
-                 [request.form['title'], request.form['text'], id])
+    g.db.execute('update entries (title, text) values (?, ?) where id = ?', [request.form['title'], request.form['text'], postid])
     g.db.commit()
     flash('Post was updated')
     return redirect(url_for('home'))
