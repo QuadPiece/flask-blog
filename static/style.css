@@ -198,6 +198,7 @@ a:hover {
   color: #2d2d2d;
   box-shadow: none;
   outline: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .add-entry textarea:active {
@@ -216,6 +217,8 @@ a:hover {
   box-shadow: none;
   font-size: 14pt;
   outline: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
 
 .add-entry input[type="submit"] {
