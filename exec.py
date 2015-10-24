@@ -44,7 +44,7 @@ def view_post(id):
     response = query_db('select title, text from entries where id = ?', [id])
     posts = [dict(title=row[0], text=row[1]) for row in response]
     posts[0]["text"] = Markup(markdown.markdown(posts[0]["text"]))
-    return render_template('post.html', post=posts[0])
+    return render_template('post.html', post=posts[0], id=id)
 
 # Editor routes
 @app.route('/add', methods=['POST'])

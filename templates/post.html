@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
+  {% if session.logged_in %}
+  <div class="metacontrols">
+    <a href="{{ url_for('update_post', postid=id) }}"><p>Edit</p></a>
+  </div>
+  {% endif %}
   <h2 class="title">{{ post.title }}</h2>
   <div class="post">
     {{ post.text }}
