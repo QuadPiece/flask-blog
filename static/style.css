@@ -17,8 +17,8 @@ body {
   min-height: 100vh;
   padding-bottom: 50px;
   box-sizing: border-box;
-  background-color: #2d2d2d;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111111;
 }
 
 a, a:visited {
