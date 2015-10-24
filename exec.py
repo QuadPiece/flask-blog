@@ -35,8 +35,8 @@ def query_db(query, args=(), one=False):
 # Actual routes
 @app.route('/')
 def home():
-    cur = g.db.execute('select title, id from entries order by id desc')
-    entries = [dict(title=row[0], id=row[1]) for row in cur.fetchall()]
+    cur = g.db.execute('select title, id, text from entries order by id desc')
+    entries = [dict(title=row[0], id=row[1], text=row[2]) for row in cur.fetchall()]
     return render_template('home.html', entries=entries)
 
 @app.route('/post/<int:id>')

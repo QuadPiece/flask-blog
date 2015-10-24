@@ -2,7 +2,10 @@
 {% block body %}
   <ul class=entries>
   {% for entry in entries %}
-    <a href="/post/{{ entry.id }}"><li>{{ entry.title }}</li></a>
+    <a href="/post/{{ entry.id }}"><li>
+      <p class="title">{{ entry.title }}</p>
+      <p class="snippet">{% (entry.text[:75] + '...') if len(entry.text) > 75 else entry.text %}</p>
+    </li></a>
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em>
   {% endfor %}
