@@ -232,4 +232,9 @@ a:hover {
   color: #FFFFFF;
   background-color: #6060A0;
   outline: none;
+  transition: background 0.15s;
+}
+
+.add-entry input[type="submit"]:hover {
+  background-color: #9090F0;
 }
