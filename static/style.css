@@ -213,7 +213,7 @@ a:hover {
   color: #2d2d2d;
   border: none;
   border-bottom: solid 2px #666666;
-  box-shadow: 0px 0px 2px #111;
+  box-shadow: none;
   font-size: 14pt;
   outline: none;
 }
