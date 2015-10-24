@@ -3,6 +3,7 @@
   <head>
     <title>Placeholder</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
     <div class="header">
@@ -12,11 +13,6 @@
       {% endfor %}
     </div>
     <div class="page">
-      <div class=metanav>
-      {% if session.logged_in %}
-        <a href="{{ url_for('logout') }}">log out</a>
-      {% endif %}
-      </div>
       {% block body %}{% endblock %}
     </div>
     <div class="footer">
@@ -24,6 +20,10 @@
         <li><a href="https://twitter.com/QuadPiece">Twitter</a></li>
         <li><a href="http://quad.moe/">Homepage</a></li>
         <li><a href="">Source code</a></li>
+        {% if session.logged_in %}
+        <li>-</li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
       </ul>
     </div>
   </body>
