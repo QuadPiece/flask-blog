@@ -195,6 +195,7 @@ a:hover {
   background-color: #eeeeee;
   color: #2d2d2d;
   box-shadow: 0px 0px 2px #111;
+  outline: none;
 }
 
 .add-entry textarea:active {
@@ -211,14 +212,17 @@ a:hover {
   color: #2d2d2d;
   box-shadow: 0px 0px 2px #111;
   font-size: 14pt;
+  outline: none;
 }
 
 .add-entry input[type="submit"] {
   width: 30%;
   margin: 0;
   border: none;
+  outline: none;
   padding: 5px;
   box-sizing: border-box;
   color: #FFFFFF;
   background-color: #6060A0;
+  outline: none;
 }
