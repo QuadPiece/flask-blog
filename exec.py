@@ -61,7 +61,7 @@ def add_post():
 def update_post(postid):
     if not session.get('logged_in'):
         abort(401)
-    g.db.execute('update entries set (title, text) values (?, ?) where id = ?', [request.form['title'], request.form['text'], postid])
+    g.db.execute('update entries set title = ?, text = ? where id = ?', [request.form['title'], request.form['text'], postid])
     g.db.commit()
     flash('Post was updated')
     return redirect(url_for('home'))
