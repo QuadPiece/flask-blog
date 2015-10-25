@@ -103,7 +103,7 @@ a:hover {
 
 .bio {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .entries {
@@ -118,7 +118,8 @@ a:hover {
   background-color: #6060A0;
   color: #ffffff;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 30px;
+  font-family: "Lato", "Roboto", sans-serif;
   font-size: 24pt;
   font-weight: 300;
   transition: background 0.2s;
