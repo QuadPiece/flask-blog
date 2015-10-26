@@ -20,8 +20,8 @@ You might also want to make sure that you have `sqlite3` installed on your syste
 
 I will not be providing any support for Windows users.
 
-Usage
-=====
+Getting started
+===============
 
 Setup is fairly easy for this application due to the nature of how it's built. However, I will inform you ahead of time that this is not designed for high-traffic load. Due to things like SQLite usage.
 
@@ -60,15 +60,17 @@ Backup
 
 why can't everything be this easy
 
-Admin interface
-===============
+Usage
+=====
 
-This one is really simple at the moment.
+This is really simple at the moment.
+
+Posts are written using Markdown. I recommend taking a little time to [learn it](https://guides.github.com/features/mastering-markdown/). It's pretty simple and you'll get the basics in a minute or two
 
 * You can log in using `example.com/login`, you must do this before anything else on this list will work
 * A logout link and a link to the post editor will appear at the bottom
-* To edit a post, use the button added to the post page. Alternatively, add `/edit` to the post url. So to edit `example.com/post/2`, you'd visit `example.com/post/2/edit`
-* To delete a post, replace `post` in the URL with `del`, so to delete `example.com/post/3`, just visit `exaple.com/del/3` **WARNING: No confimation, your post will be deleted the instant the server recieves the GET request from your browser**
+* To edit a post, use the link added to the post page. Alternatively, add `/edit` to the post url. To edit `example.com/post/2`, you'd visit `example.com/post/2/edit`
+* To delete a post, replace `post` in the URL with `del`. To delete `example.com/post/3`, you'd just visit `exaple.com/del/3` **WARNING: No confimation, your post will be deleted the instant the server recieves the GET request from your browser**
 
 At the moment, that's it.
 
