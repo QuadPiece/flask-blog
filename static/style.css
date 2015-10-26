@@ -130,9 +130,9 @@ a:hover {
 }
 
 .entries a:visited li {
-  background-color: #404080;
+  background-color: #505090;
   font-size: 22pt;
-  color: #aaaaaa;
+  color: #eeeeee;
 }
 
 .entries a:hover li {
