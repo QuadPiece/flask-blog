@@ -10,7 +10,7 @@ With that being said. This software is pretty much [WTFPL](https://en.wikipedia.
 If you do something with this code, mention me on [Twitter](http://twitter.com/QuadPiece), I'd love to see :3
 
 Requirements
-------------
+============
 
 Python 2.7+, because that's just what Flask recommends.  
 `tmux` to keep the blog running.
@@ -21,7 +21,7 @@ You might also want to make sure that you have `sqlite3` installed on your syste
 I will not be providing any support for Windows users.
 
 Usage
------
+=====
 
 Setup is fairly easy for this application due to the nature of how it's built. However, I will inform you ahead of time that this is not designed for high-traffic load. Due to things like SQLite usage.
 
@@ -30,13 +30,15 @@ Setup is fairly easy for this application due to the nature of how it's built. H
 3. Install everything listed in requirements.txt using `pip install -r requirements.txt` or do it manually
 4. Proceed with the relevant procedure fitting your use case below
 
-### Development
+Development
+-----------
 
 1. Generate the sqlite database by running `sqlite3 blog.db < schema.sql` in the directory where you cloned the repo
 2. Do `python exec.py`
 3. Start working
 
-### Production
+Production
+----------
 
 1. Edit the variables in `exec.py` to fit your needs, **Make sure you remove `debug=True` from `app.run()` for security reasons, you should also make sure that `host="<something>"` is set to `127.0.0.1` for step 3**
 2. Generate the sqlite database by running `sqlite3 blog.db < schema.sql` in the directory where you cloned the repo
@@ -44,20 +46,22 @@ Setup is fairly easy for this application due to the nature of how it's built. H
 4. Do `python exec.py`
 5. (Optional) It's heavily recommended that you configure your webserver to handle static files for you. This can greatly improve performance and in some cases, security
 
-### Migration
+Migration
+---------
 
 Now this is the best part
 
 1. Do exactly the same as above, but instead of creating the database with the `schema.sql` file, just bring along your own `blog.db` file
 
-### Backup
+Backup
+------
 
 1. Copy the `blog.db` somewhere
 
 why can't everything be this easy
 
 Admin interface
----------------
+===============
 
 This one is really simple at the moment.
 
@@ -71,7 +75,7 @@ At the moment, that's it.
 For images, upload them somewhere else and add them using regular markdown
 
 Goals
------
+=====
 
 This project was started to learn some basic Flask and Python features that could come in handy later. Mainly, these features are:
 
