@@ -37,6 +37,8 @@ Development
 2. Do `python exec.py`
 3. Start working
 
+By default, the application will listen on all IPs/Domains and run on port 5800.
+
 Production
 ----------
 
@@ -44,7 +46,7 @@ Production
 2. Generate the sqlite database by running `sqlite3 blog.db < schema.sql` in the directory where you cloned the repo
 3. Set up a proper webserver to handle your requests. I recommend nginx. Configure it as a reverse proxy for your desired subdomain or url, pointing to `127.0.0.1` and whatever port you defined in `exec.py`
 4. Do `python exec.py`
-5. (Optional) It's heavily recommended that you configure your webserver to handle static files for you. This can greatly improve performance and in some cases, security
+5. (Optional) It's recommended that you configure your webserver to handle static files for you. This can greatly improve performance and in some cases, security. If you don't know how to do it, the application will server static files for you worst-case.
 
 Migration
 ---------
@@ -59,6 +61,14 @@ Backup
 1. Copy the `blog.db` somewhere
 
 why can't everything be this easy
+
+Updating
+--------
+
+1. Backup your `blog.db` file.
+2. Do a `git pull` to get the most recent code
+3. Edit any configs in the file so that it works with your existing setup
+4. Start the application normally using `python exec.py`, preferrably in a tmux session
 
 Usage
 =====
