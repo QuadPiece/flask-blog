@@ -23,6 +23,9 @@ I will not be providing any support for Windows users.
 Getting started
 ===============
 
+If you don't care about recent features and just want a stable working release. Check the tags. Every version of the code that I've been using in production without problems for longer periods of time will be listed there.  
+Note that no real tests have been run. I just know that they've been functional for multiple days without major issues.
+
 Setup is fairly easy for this application due to the nature of how it's built. However, I will inform you ahead of time that this is not designed for high-traffic load. Due to things like SQLite usage.
 
 1. Clone the repository into a folder anywhere you wish
