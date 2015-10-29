@@ -1,0 +1,5 @@
+----- v1.0 -----
+Initial recommended release.
+
+Features include the site design itself, posts stored in an SQLite db, a basic editor, markdown support and single user admin login.
+This was the original base for the deployment of blawg.quad.moe, some smaller in-production edits have been done since then.
