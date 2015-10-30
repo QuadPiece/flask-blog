@@ -78,7 +78,7 @@ Usage
 
 This is really simple at the moment.
 
-Posts are written using Markdown. I recommend taking a little time to [learn it](https://guides.github.com/features/mastering-markdown/). It's pretty simple and you'll get the basics in a minute or two
+Posts are written using Markdown. I recommend taking a little time to [learn it](https://daringfireball.net/projects/markdown/syntax). It's pretty simple and you'll get the basics in a minute or two
 
 * You can log in using `example.com/login`, you must do this before anything else on this list will work
 * A logout link and a link to the post editor will appear at the bottom
