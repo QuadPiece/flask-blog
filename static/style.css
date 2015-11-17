@@ -28,7 +28,7 @@ a, a:visited {
 }
 
 a:hover {
-  color: #B0B0F0;
+  color: #FF7535;
 }
 
 /* Header */
@@ -152,7 +152,7 @@ a:hover {
 }
 
 .metacontrols {
-  background-color: #6060A0;
+  background-color: #DD6025;
   color: #ffffff;
   padding: 10px;
   box-sizing: border-box;
