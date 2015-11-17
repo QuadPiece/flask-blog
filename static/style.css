@@ -277,11 +277,11 @@ a:hover {
   font-size: 16pt;
   box-sizing: border-box;
   color: #FFFFFF;
-  background-color: #6060A0;
+  background-color: #DD6025;
   outline: none;
   transition: background 0.15s;
 }
 
 .add-entry input[type="submit"]:hover {
-  background-color: #9090F0;
+  background-color: #FF7535;
 }
