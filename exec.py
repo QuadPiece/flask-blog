@@ -1,7 +1,5 @@
 # Import party
-import sqlite3
-import markdown
-import time
+import sqlite3, markdown, time
 from datetime import datetime
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, Markup
 
