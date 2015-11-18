@@ -35,7 +35,7 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 def time_convert(unixtime):
-    return datetime.fromtimestamp(unixtime).strftime('%B %d, %Y (%H:%M)')
+    return datetime.fromtimestamp(unixtime).strftime('%B %d, %Y (%H:%M - ' + time.tzname[time.daylight] + ')')
 
 # Actual routes for the basic site
 @app.route('/')
