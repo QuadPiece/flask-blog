@@ -45,8 +45,11 @@ a:hover {
 }
 
 .flashmessage {
-  padding: 3px;
-  font-size: 10pt;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 8px;
+  font-size: 12pt;
   display: inline-block;
   margin-left: 15px;
   box-shadow: 0px 0px 2px #ffffff;
