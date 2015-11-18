@@ -34,6 +34,9 @@ def query_db(query, args=(), one=False):
     rv = cur.fetchall()
     return (rv[0] if rv else None) if one else rv
 
+def time_convert(unixtime):
+    return datetime.fromtimestamp(unixtime).strftime('%B %d, %Y (%H:%M)')
+
 # Actual routes for the basic site
 @app.route('/')
 def home():
@@ -46,9 +49,9 @@ def view_post(id):
     response = query_db('select title, text, time, updated from entries where id = ?', [id])
     posts = [dict(title=row[0], text=row[1], time=row[2], updated=row[3]) for row in response]
     posts[0]["text"] = Markup(markdown.markdown(posts[0]["text"]))
-    # Turn the time into a string
+    # Unix epoch time -> Human readable
     if posts[0]["time"]:
-        posttime = datetime.fromtimestamp(posts[0]["time"]).strftime('%B %d, %Y (%H:%M)')
+        posttime = time_convert(posts[0]["time"])
     else:
         posttime = None
     return render_template('post.html', post=posts[0], id=id, posttime=posttime)
