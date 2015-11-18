@@ -1,6 +1,8 @@
 # Import party
 import sqlite3
 import markdown
+import time
+from datetime import datetime
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, Markup
 
 #Config variables
@@ -41,18 +43,23 @@ def home():
 
 @app.route('/post/<int:id>')
 def view_post(id):
-    response = query_db('select title, text from entries where id = ?', [id])
-    posts = [dict(title=row[0], text=row[1]) for row in response]
+    response = query_db('select title, text, time, updated from entries where id = ?', [id])
+    posts = [dict(title=row[0], text=row[1], time=row[2], updated=row[3]) for row in response]
     posts[0]["text"] = Markup(markdown.markdown(posts[0]["text"]))
-    return render_template('post.html', post=posts[0], id=id)
+    # Turn the time into a string
+    if posts[0]["time"]:
+        posttime = datetime.fromtimestamp(posts[0]["time"]).strftime('%B %d, %Y (%H:%M)')
+    else:
+        posttime = None
+    return render_template('post.html', post=posts[0], id=id, posttime=posttime)
 
 # Editor routes
 @app.route('/add', methods=['POST'])
 def add_post():
     if not session.get('logged_in'):
         abort(401)
-    g.db.execute('insert into entries (title, text) values (?, ?)',
-                 [request.form['title'], request.form['text']])
+    g.db.execute('insert into entries (title, text, time) values (?, ?, ?)',
+                 [request.form['title'], request.form['text'], time.time()])
     g.db.commit()
     flash('New entry was successfully posted')
     return redirect(url_for('home'))
@@ -61,7 +68,7 @@ def add_post():
 def update_post(postid):
     if not session.get('logged_in'):
         abort(401)
-    g.db.execute('update entries set title = ?, text = ? where id = ?', [request.form['title'], request.form['text'], postid])
+    g.db.execute('update entries set title = ?, text = ?, updated = ? where id = ?', [request.form['title'], request.form['text'], time.time(), postid])
     g.db.commit()
     flash('Post was updated')
     return redirect(url_for('home'))

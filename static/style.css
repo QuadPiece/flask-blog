@@ -221,6 +221,12 @@ a:hover {
   border-left: 1px solid #4D4D4D;
 }
 
+.title .time {
+  color: #CCCCCC;
+  font-size: 75%;
+  font-weight: 300;
+}
+
 /* Login form */
 
 .loginform {
