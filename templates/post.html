@@ -2,7 +2,12 @@
 {% block body %}
   {% if session.logged_in %}
   <div class="metacontrols">
-    <a href="{{ url_for('edit_post', id=id) }}"><p>Edit</p></a>
+    <a href="{{ url_for('edit_post', id=id) }}">
+      <p>Edit</p>
+    </a>
+    {% if updatetime %}
+    <p>Last edited: {{ updatetime }}</p>
+    {% endif %}
   </div>
   {% endif %}
   <div class="title">

@@ -54,7 +54,11 @@ def view_post(id):
         posttime = time_convert(posts[0]["time"])
     else:
         posttime = None
-    return render_template('post.html', post=posts[0], id=id, posttime=posttime)
+    if posts[0]["updated"]:
+        updatetime = time_convert(posts[0]["updated"])
+    else:
+        updatetime = None
+    return render_template('post.html', post=posts[0], id=id, posttime=posttime, updatetime=updatetime)
 
 # Editor routes
 @app.route('/add', methods=['POST'])
