@@ -2,6 +2,7 @@
 {% block body %}
   {% if session.logged_in %}
   <div class="metacontrols">
+    <span class="metatitle">Meta controls</span>
     <a href="{{ url_for('edit_post', id=id) }}">
       <p>Edit</p>
     </a>
