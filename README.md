@@ -71,6 +71,7 @@ Updating
 1. Backup your `blog.db` file.
 2. Do a `git pull` to get the most recent code
 3. Edit any configs in the file so that it works with your existing setup
+4. Sometimes, changes are made to the database structure. To update your database, use the provided sql files. eg. to update from v1.2 to v1.3, which added support for timestamps on posts, run `sqlite3 blog.db < upgrade-v12-v13.sql`
 4. Start the application normally using `python exec.py`, preferrably in a tmux session
 
 Usage
