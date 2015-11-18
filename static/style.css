@@ -246,6 +246,15 @@ a:hover {
   outline: none;
   font-family: "Lato", sans-serif;
   font-weight: 300;
+  transition: background 0.1s ease-in-out;
+}
+
+.loginform input:hover {
+  background-color: #EEEEEE;
+}
+
+.loginform input:focus {
+  background-color: #DDDDDD;
 }
 
 .loginform input[type="submit"] {
@@ -254,6 +263,11 @@ a:hover {
   border: none;
   padding: 15px;
   font-size: 22pt;
+  transition: background 0.1s ease-in-out;
+}
+
+.loginform input[type="submit"]:hover {
+  background-color: #FF7535;
 }
 
 /* Add post page */
