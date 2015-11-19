@@ -4,14 +4,20 @@ from datetime import datetime
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, Markup
 
 #Config variables
+# TODO: Move to a separate file
 DATABASE = './blog.db'
 SECRET_KEY = 'sample key'
 USERNAME = 'user'
 PASSWORD = 'bananacar'
+DEBUG = True
 
 # Create instance
 app = Flask(__name__)
 app.config.from_object(__name__)
+
+# Debug functions
+def calculate_time():
+    return (time.time() - g.startTime) * 1000
 
 # Database functions
 def db_connect():
@@ -20,12 +26,16 @@ def db_connect():
 @app.before_request
 def before_request():
     g.db = db_connect()
+    if app.config['DEBUG'] == True:
+        g.startTime = time.time()
 
 @app.teardown_request
 def teardown_request(exception):
     db = getattr(g, 'db', None)
     if db is not None:
         db.close()
+    if app.config['DEBUG'] == True:
+        app.logger.debug('Request processed in %d ms', calculate_time())
 
 def query_db(query, args=(), one=False):
     cur = g.db.execute(query, args)
@@ -123,4 +133,4 @@ def logout():
     flash('You were logged out')
     return redirect(url_for('home'))
 
-app.run(debug=True,host="0.0.0.0",port=5800)
+app.run(host="0.0.0.0",port=5800)
