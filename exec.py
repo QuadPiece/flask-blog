@@ -30,7 +30,7 @@ def db_connect():
 @app.before_request
 def before_request():
   g.db = db_connect()
-  if app.config['DEBUG'] == True:
+  if app.config['DEBUG']:
     g.startTime = time.time()
 
 
@@ -40,7 +40,7 @@ def teardown_request(exception):
   db = getattr(g, 'db', None)
   if db is not None:
     db.close()
-  if app.config['DEBUG'] == True:
+  if app.config['DEBUG']:
     app.logger.debug('Request processed in %d ms', calculate_time())
 
 
