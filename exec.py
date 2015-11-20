@@ -48,7 +48,7 @@ def query_db(query, args=(), one=False):
   return (rv[0] if rv else None) if one else rv
 
 
-def time_convert(unixtime):
+def time_to_string(unixtime):
   return datetime.fromtimestamp(unixtime).strftime('%B %d, %Y (%H:%M - ' + time.tzname[time.daylight] + ')')
 
 
@@ -67,11 +67,11 @@ def view_post(id):
   posts[0]["text"] = Markup(markdown.markdown(posts[0]["text"]))
   # Unix epoch time -> Human readable
   if posts[0]["time"]:
-    posttime = time_convert(posts[0]["time"])
+    posttime = time_to_string(posts[0]["time"])
   else:
     posttime = None
   if posts[0]["updated"]:
-    updatetime = time_convert(posts[0]["updated"])
+    updatetime = time_to_string(posts[0]["updated"])
   else:
     updatetime = None
   return render_template('post.html', post=posts[0], id=id, posttime=posttime, updatetime=updatetime)
@@ -101,7 +101,7 @@ def update_post(postid):
 
 
 @app.route('/write')
-def writenew():
+def write_new():
   if not session.get('logged_in'):
     abort(401)
   else:
@@ -129,7 +129,7 @@ def edit_post(id):
 
 # Sessions
 @app.route('/login', methods=['GET', 'POST'])
-def login():
+def login_page():
   error = None
   if request.method == 'POST':
     if request.form['username'] != app.config['USERNAME']:
