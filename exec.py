@@ -26,6 +26,7 @@ def db_connect():
   return sqlite3.connect(app.config['DATABASE'])
 
 
+# TODO: Take the time to only use this function when needed
 @app.before_request
 def before_request():
   g.db = db_connect()
@@ -33,6 +34,7 @@ def before_request():
     g.startTime = time.time()
 
 
+# TODO: Take the time to only use this function when needed
 @app.teardown_request
 def teardown_request(exception):
   db = getattr(g, 'db', None)
