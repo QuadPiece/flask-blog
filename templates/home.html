@@ -1,20 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
-  <div class="bio">
-    <p>
-      Hey there. I'm quad. I do geeky stuff and watch some anime and whatevr. These days, people probably know me as the creator of <a href="http://openings.moe/">openings.moe</a>
-    </p>
-    <p>
-      This is a blog dedicated to dumping some random stuff. Though activity will probably not be that high. I recommend trying <a href="https://twitter.com/QuadPiece">Twitter</a> if you're looking for more.
-    </p>
+  {% if post %}
+  <div class="title">
+    <h2>
+      <a href="{{ url_for('view_post', id=post['id']) }}">
+        {{ post.title }}
+      </a>
+    </h2>
+
+    {% if post.time %}
+    <p class="time">Posted: {{ post.time }}</p>
+    {% endif %}
   </div>
+  <div class="post">
+    {{ post.text }}
+  </div>
+  {% endif %}
+
+  <!-- Post list -->
   <ul class=entries>
   {% for entry in entries %}
     <a href="/post/{{ entry.id }}">
       <li>{{ entry.title }}</li>
     </a>
   {% else %}
-    <li><em>Unbelievable.  No entries here so far</em>
+    <li><em>Unbelievable.  No other posts here so far</em>
   {% endfor %}
   </ul>
 {% endblock %}

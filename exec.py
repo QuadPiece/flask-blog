@@ -57,9 +57,21 @@ def time_to_string(unixtime):
 # Actual routes for the basic site
 @app.route('/')
 def home():
-  cur = g.db.execute('select title, id, text from entries order by id desc')
-  entries = [dict(title=row[0], id=row[1], text=row[2]) for row in cur.fetchall()]
-  return render_template('home.html', entries=entries)
+  cur = g.db.execute('select title, id, text, time from entries order by id desc')
+  entries = [dict(title=row[0], id=row[1], text=row[2], time=row[3]) for row in cur.fetchall()]
+
+  if len(entries) < 1:
+    return render_template('empty.html')
+
+  # Fix post one for display if it exists
+  if entries[0]:
+    entries[0]["text"] = Markup(markdown.markdown(entries[0]["text"]))
+    if entries[0]["time"]:
+      entries[0]["time"] = time_to_string(entries[0]["time"])
+    else:
+      entries[0]["time"] = None
+
+  return render_template('home.html', entries=entries[1:], post=entries[0])
 
 
 @app.route('/post/<int:id>')
