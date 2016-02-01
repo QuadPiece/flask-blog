@@ -183,5 +183,5 @@ def logout():
   flash('You were logged out')
   return redirect(url_for('home'))
 
-
-app.run(host="0.0.0.0", port=5800)
+if __name__ == "__main__":
+  app.run(host="0.0.0.0", port=5800)
