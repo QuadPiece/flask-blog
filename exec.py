@@ -71,7 +71,27 @@ def home():
     else:
       entries[0]["time"] = None
 
-  return render_template('home.html', entries=entries[1:], post=entries[0])
+  if len(entries) > 5:
+    return render_template('home.html', entries=entries[1:5], post=entries[0], long=True)
+  else:
+    return render_template('home.html', entries=entries[1:], post=entries[0], long=False)
+
+@app.route('/all')
+def post_list():
+  cur = g.db.execute('select title, id, time from entries order by id desc')
+  entries = [dict(title=row[0], id=row[1], time=row[2]) for row in cur.fetchall()]
+
+  if entries:
+    for entry in entries:
+      if entry["time"]:
+        entry["time"] = time_to_string(entry["time"])
+    else:
+      entry["time"] = None
+
+  if len(entries) < 1:
+    return render_template('empty.html')
+
+  return render_template('list.html', entries=entries, long=False)
 
 
 @app.route('/post/<int:id>')

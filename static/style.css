@@ -31,6 +31,10 @@ a:hover {
   color: #FF7535;
 }
 
+.link, .link:visited {
+  color: #DD6025;
+}
+
 /* Header */
 
 .header {
@@ -139,6 +143,23 @@ a:hover {
 .entries a:hover li {
   background-color: #FF7535;
   color: #fff;
+}
+
+.allposts {
+  list-style: none;
+  color: #999999;
+}
+
+.entries a .more, .entries a:visited .more {
+  margin: 15px;
+  padding: 10px;
+  background: none;
+  color: #000000;
+  box-shadow: none;
+}
+
+.entries a:hover .more {
+  background-color: rgba(0,0,0,0.3);
 }
 
 /* Post page */

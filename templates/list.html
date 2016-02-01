@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="title">
+    <h2>All posts</h2>
+  </div>
+  <!-- Post list -->
+  <ul class="allposts">
+  {% for entry in entries %}
+    <li>
+      <a href="/post/{{ entry.id }}" class="link">
+        {{ entry.title }}
+      </a>
+        {% if entry.time %}
+          - Posted: {{ entry.time }}
+        {% endif %}
+    </li>
+  {% else %}
+    <li><em>Unbelievable.  No other posts here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}

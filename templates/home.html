@@ -18,7 +18,7 @@
   {% endif %}
 
   <!-- Post list -->
-  <ul class=entries>
+  <ul class="entries">
   {% for entry in entries %}
     <a href="/post/{{ entry.id }}">
       <li>{{ entry.title }}</li>
@@ -26,5 +26,10 @@
   {% else %}
     <li><em>Unbelievable.  No other posts here so far</em>
   {% endfor %}
+    {% if long %}
+    <a href="/all">
+      <li class="more">More posts</li>
+    </a>
+    {% endif %}
   </ul>
 {% endblock %}
