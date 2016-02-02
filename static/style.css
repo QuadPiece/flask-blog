@@ -152,7 +152,7 @@ a:hover {
 }
 
 .entries a .more, .entries a:visited .more {
-  margin: 15px;
+  margin-top: 15px;
   padding: 10px;
   background: none;
   color: #AAAAAA;
